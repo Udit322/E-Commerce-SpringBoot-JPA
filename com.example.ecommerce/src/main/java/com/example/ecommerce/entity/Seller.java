@@ -2,13 +2,15 @@ package com.example.ecommerce.entity;
 
 import java.util.List;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+//import jakarta.persistence.JoinColumn;
+//import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-
+@Entity
 public class Seller {
 
-
+@Id
 private Integer sellerId;
 private String firstName;
 private String lastName;
@@ -21,9 +23,9 @@ private List<Product> products;
 
 private Integer cartItemId;
 
-@ManyToOne
-@JoinColumn(name = "product_id")
-private Product product;
+//@ManyToOne
+//@JoinColumn(name = "product_id")
+//private Product product;
 
 private Integer cartItemQuantity;
 
@@ -91,13 +93,13 @@ public void setCartItemId(Integer cartItemId) {
 	this.cartItemId = cartItemId;
 }
 
-public Product getProduct() {
-	return product;
-}
-
-public void setProduct(Product product) {
-	this.product = product;
-}
+//public Product getProduct() {
+//	return product;
+//}
+//
+//public void setProduct(Product product) {
+//	this.product = product;
+//}
 
 public Integer getCartItemQuantity() {
 	return cartItemQuantity;
