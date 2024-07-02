@@ -1,16 +1,21 @@
 package com.example.ecommerce.entity;
 
-import java.util.Locale.Category;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+//simport java.util.Locale.Category;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.transaction.Status;
-
+import jakarta.persistence.Table;
+//import jakarta.transaction.Status;
+@Entity
+@Table(name = "Product")
 public class Product {
-
+@Id
 	private Integer productId;
 	private String productName;
 	private Double price;
@@ -18,12 +23,13 @@ public class Product {
 	private String manufacturer;
 	private Integer quantity;
 	@Enumerated(EnumType.STRING)
-	private Category category;
+	private ProductCategory category;
 	@Enumerated(EnumType.STRING)
-	private Status status;
+	private ProductStatus status;
 
 	@ManyToOne
 	@JoinColumn(name = "seller_id")
+	  @JsonIgnore // Add this to prevent infinite recursion
 	private Seller seller;
 
 	public Integer getProductId() {
@@ -74,19 +80,19 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public Category getCategory() {
+	public ProductCategory getCategory() {
 		return category;
 	}
 
-	public void setCategory(Category category) {
+	public void setCategory(ProductCategory category) {
 		this.category = category;
 	}
 
-	public Status getStatus() {
+	public ProductStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(ProductStatus status) {
 		this.status = status;
 	}
 
