@@ -8,5 +8,5 @@ public interface ProductService {
     Product getProductById(Integer id);
     Product addProduct(Product product);
     Product updateProduct(Integer id, Product product);
-    void deleteProduct(Integer id);
+    void  deleteProduct(Integer id);
 }
