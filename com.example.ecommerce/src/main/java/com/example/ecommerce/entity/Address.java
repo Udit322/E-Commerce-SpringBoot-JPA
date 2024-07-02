@@ -23,6 +23,12 @@ private String locality;
 private String city;
 private String state;
 private String pincode;
+
+
+
+	@ManyToOne
+@JoinColumn(name = "customer_id")
+private Customer customer;
 public Integer getAddressId() {
 	return addressId;
 }
@@ -124,7 +130,4 @@ public Address() {
 }
 
 
-@ManyToOne
-@JoinColumn(name = "customer_id")
-private Customer customer;
 }
