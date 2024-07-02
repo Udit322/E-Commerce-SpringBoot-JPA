@@ -105,5 +105,9 @@ public class Customer_Order {
 		// TODO Auto-generated constructor stub
 	}
 
-    // Getters and Setters
+    public void setPaymentMethod(Customer_Order string) {
+		// TODO Auto-generated method stub
+	Customer_Order paymentmethod = string ;
+	}
+
 }
