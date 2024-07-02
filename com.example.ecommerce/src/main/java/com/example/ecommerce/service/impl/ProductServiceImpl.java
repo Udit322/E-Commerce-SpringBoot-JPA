@@ -13,22 +13,22 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    @Override
+    
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
-    @Override
+    
     public Product getProductById(Integer id) {
         return productRepository.findById(id).orElse(null);
     }
 
-    @Override
+    
     public Product addProduct(Product product) {
         return productRepository.save(product);
     }
 
-    @Override
+   
     public Product updateProduct(Integer id, Product product) {
         Product existingProduct = productRepository.findById(id).orElse(null);
         if (existingProduct != null) {
@@ -44,6 +44,18 @@ public class ProductServiceImpl implements ProductService {
         }
         return null;
     }
+
+    
+    public void deleteProduct(Integer id) {
+        productRepository.deleteById(id);
+    }
+
+	
+	public void deleteProduct() {
+		
+		
+	}
+}
 
     @Override
     public void deleteProduct(Integer id) {
