@@ -1,10 +1,11 @@
 package com.example.ecommerce.entity;
 
-import org.springframework.data.annotation.Id;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -12,7 +13,6 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name= "addressdetails")
 public class Address {
-
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -125,8 +125,8 @@ public void setCustomer(Customer customer) {
 
 
 public Address() {
-	super();
-	// TODO Auto-generated constructor stub
+	
+	
 }
 
 
