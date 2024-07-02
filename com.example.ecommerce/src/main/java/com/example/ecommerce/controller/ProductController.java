@@ -1,3 +1,4 @@
+
 package com.example.ecommerce.controller;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
@@ -29,7 +30,7 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Product addProduct(@RequestBody Product product) {
         return productService.addProduct(product);
     }
