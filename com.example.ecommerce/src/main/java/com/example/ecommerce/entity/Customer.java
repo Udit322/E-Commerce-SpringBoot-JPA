@@ -3,18 +3,19 @@ package com.example.ecommerce.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-
-import org.springframework.data.annotation.Id;
-
+import  com.example.ecommerce.entity.Customer_Order;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapKeyColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
-
+@SuppressWarnings("unused")
+@Entity
 public class Customer {
 
 
@@ -101,11 +102,11 @@ public void setAddresses(Map<String, Address> addresses) {
 	this.addresses = addresses;
 }
 
-public List<Order> getOrders() {
+public Customer_Order getOrders(Customer_Order orders) {
 	return orders;
 }
 
-public void setOrders(List<Order> orders) {
+public void setOrders(List<Customer_Order> orders) {
 	this.orders = orders;
 }
 
@@ -119,7 +120,7 @@ public void setCustomerCart(Cart customerCart) {
 
 public Customer() {
 	super();
-	// TODO Auto-generated constructor stub
+	
 }
 
 @ElementCollection
@@ -128,7 +129,7 @@ public Customer() {
 private Map<String, Address> addresses;
 
 @OneToMany(mappedBy = "customer")
-private List<Order> orders;
+private List<Customer_Order> orders;
 
 @OneToOne(mappedBy = "customer")
 private Cart customerCart;
