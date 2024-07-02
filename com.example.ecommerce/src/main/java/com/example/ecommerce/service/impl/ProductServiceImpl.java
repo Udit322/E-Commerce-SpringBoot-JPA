@@ -1,3 +1,4 @@
+
 package com.example.ecommerce.service.impl;
 
 import java.util.List;
@@ -46,19 +47,17 @@ public class ProductServiceImpl implements ProductService {
     }
 
     
-    public void deleteProduct(Integer id) {
-        productRepository.deleteById(id);
-    }
+//    public void deleteProduct(Integer id) {
+//        productRepository.deleteById(id);
+//    }
 
-	
-	public void deleteProduct() {
-		
+
+	@Override
+	public void deleteProduct(Integer id) {
+		productRepository.deleteById(id);
 		
 	}
+
+	
 }
 
-    @Override
-    public void deleteProduct(Integer id) {
-        productRepository.deleteById(id);
-    }
-}
