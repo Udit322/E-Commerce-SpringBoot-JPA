@@ -1,5 +1,7 @@
 package com.example.ecommerce.repository;
 
-public interface OrderRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.ecommerce.entity.Order;
 
+public interface OrderRepository extends JpaRepository<Order, Integer> {
 }
