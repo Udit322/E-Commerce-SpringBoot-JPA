@@ -1,7 +1,7 @@
-package com.E_Commerce.com.project.Ecommerce.Service;
+package com.example.ecommerce.service;
 
 import java.util.List;
-import com.E_Commerce.com.project.Ecommerce.Entity.Customer;
+import com.example.ecommerce.entity.Customer;
 
 public interface CustomerService {
     List<Customer> getAllCustomers();
