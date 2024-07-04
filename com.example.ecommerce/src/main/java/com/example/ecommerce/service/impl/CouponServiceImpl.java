@@ -1,5 +1,5 @@
 
-package com.example.ecommerce.serviceimpl;
+package com.example.ecommerce.service.impl;
 
 import com.example.ecommerce.entity.Coupon;
 import com.example.ecommerce.repository.CouponRepository;
