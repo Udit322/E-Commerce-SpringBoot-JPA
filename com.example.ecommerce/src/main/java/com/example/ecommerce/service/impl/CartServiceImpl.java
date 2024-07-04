@@ -2,6 +2,7 @@ package com.example.ecommerce.service.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.ecommerce.entity.Cart;
@@ -38,19 +39,20 @@ public Cart addToCart(Cart cart) {
 //}
 
 @Override
-public Cart deleteCart(Integer cartId){
+public ResponseEntity<Cart> deleteCartById(Integer cartId){
 	cartRepository.deleteById(cartId);
 	return null;
 	
 }
 
-@SuppressWarnings("deprecation")
+
 @Override
-public Cart getCartById(Integer cartId) {
+public ResponseEntity<Cart> getCartById(Integer cartId) {
 	
-	return cartRepository.getById(cartId);
+	 return cartRepository.findById(cartId)
+             .map(cart -> ResponseEntity.ok(cart))
+             .orElse(ResponseEntity.notFound().build());
 }
-	
     
   }
 	
