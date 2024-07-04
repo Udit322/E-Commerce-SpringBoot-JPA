@@ -18,6 +18,30 @@ public class Coupon {
     private String code;
     private Double discount;
     private LocalDateTime expiryDate;
+	public Integer getCouponId() {
+		return couponId;
+	}
+	public void setCouponId(Integer couponId) {
+		this.couponId = couponId;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public Double getDiscount() {
+		return discount;
+	}
+	public void setDiscount(Double discount) {
+		this.discount = discount;
+	}
+	public LocalDateTime getExpiryDate() {
+		return expiryDate;
+	}
+	public void setExpiryDate(LocalDateTime expiryDate) {
+		this.expiryDate = expiryDate;
+	}
 
-    // getters and setters
+   
 }
