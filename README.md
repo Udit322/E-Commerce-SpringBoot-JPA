@@ -1,1 +1,1 @@
-# E-Commerce-SpringBoot-JPA
+# E-Commerce-SpringBoot-JPA A project
