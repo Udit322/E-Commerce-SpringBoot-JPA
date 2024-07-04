@@ -1,5 +1,11 @@
 package com.example.ecommerce.service;
 
-public interface WishlistService {
+import com.example.ecommerce.entity.Wishlist;
 
+import java.util.List;
+
+public interface WishlistService {
+    Wishlist addToWishlist(Wishlist wishlist);
+    List<Wishlist> getWishlistByCustomerId(Integer customerId);
+    void removeFromWishlist(Integer wishlistId);
 }
