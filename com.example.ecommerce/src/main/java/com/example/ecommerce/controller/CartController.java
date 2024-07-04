@@ -3,7 +3,7 @@ package com.example.ecommerce.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +20,7 @@ import com.example.ecommerce.service.CartService;
 public class CartController {
 	@Autowired
 	private CartService cartService;
-	@GetMapping("/all ")
+	@GetMapping("/all")
 	public List<Cart> getCart() {
 		return cartService.getCart();
 	}
@@ -33,15 +33,15 @@ public class CartController {
 		
 		
 	@GetMapping("/{cartId}")
-	public Cart getCartById(@PathVariable Integer cartId) {
+	public ResponseEntity<Cart> getCartById(@PathVariable Integer cartId) {
 		
 		return cartService.getCartById(cartId);
 	}
 	
 	@DeleteMapping("delete/{cartId}")
-	public Cart deleteCartById(@PathVariable Integer cartId) {
+	public ResponseEntity<Cart> deleteCartById(@PathVariable Integer cartId) {
 		
-		return cartService.deleteCart(cartId);
+		return cartService.deleteCartById(cartId);
 	}	
 		
 	
