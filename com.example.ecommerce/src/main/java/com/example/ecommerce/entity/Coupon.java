@@ -42,6 +42,10 @@ public class Coupon {
 	public void setExpiryDate(LocalDateTime expiryDate) {
 		this.expiryDate = expiryDate;
 	}
+	public Coupon() {
+		super();
+		
+	}
 
    
 }
