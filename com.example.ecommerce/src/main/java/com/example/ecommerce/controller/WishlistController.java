@@ -14,10 +14,11 @@ public class WishlistController {
     @Autowired
     private WishlistService wishlistService;
 
-    @PostMapping("/add")
+    @PostMapping("/create")
     public Wishlist addToWishlist(@RequestBody Wishlist wishlist) {
-        return wishlistService.addToWishlist(wishlist);
-    }
+//        return wishlistService.addToWishlist(wishlist);
+    
+    	   return wishlistService.addToWishlist(wishlist, wishlist.getProduct().getProductId(), wishlist.getCustomer().getCustomerId());}
 
     @GetMapping("/customer/{customerId}")
     public List<Wishlist> getWishlistByCustomerId(@PathVariable Integer customerId) {
