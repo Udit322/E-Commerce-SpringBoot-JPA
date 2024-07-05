@@ -14,9 +14,10 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    @PostMapping("/add")
-    public Review addReview(@RequestBody Review review) {
-        return reviewService.addReview(review);
+    @PostMapping("/create")
+    public Review addReview( @RequestBody Review review) {
+//        return reviewService.addReview(review);
+    	return reviewService.addReview(review, review.getProduct().getProductId(), review.getCustomer().getCustomerId());
     }
 
     @GetMapping("/product/{productId}")
