@@ -2,13 +2,19 @@
 package com.example.ecommerce.service;
 
 import java.util.List;
-import com.example.ecommerce.entity.Order;
+import java.util.Optional;
+
+
+
+import com.example.ecommerce.entity.Customer_Order;
+
 
 public interface OrderService {
-    List<Order> getAllOrders();
-    Order getOrderById(Integer id);
-    List<Order> getOrdersByCustomerId(Integer customerId);
-    Order addOrder(Order order);
-    Order updateOrder(Integer id, Order order);
-    void deleteOrder(Integer id);
+    Customer_Order createOrder(Customer_Order order);
+    List<Customer_Order> getAllOrders();
+    Customer_Order getOrderById(Integer orderId);
+    List<Customer_Order> getOrdersByCustomerId(Integer customerId);
+    Customer_Order updateOrderStatus(Integer orderId, Customer_Order order);
+    void deleteOrder(Integer orderId);
+    Optional<Customer_Order> getOrderHistory(Integer customerId);
 }
