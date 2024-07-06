@@ -177,4 +177,3 @@ Feel free to submit issues or pull requests.
 
 ---
 
-Copy this template into your `README.md` file in your repository root. Adjust any sections or details specific to your implementation.
